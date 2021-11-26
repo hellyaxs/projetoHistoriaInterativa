@@ -1,14 +1,17 @@
 public class Option{
+
     private String keyword;
     private String text;
     private int abilityDamage;
     private int energyDamage;
     private boolean valor;
     
-    public Option(String text, int abilityDamage, boolean valor){
+    public Option(String text, int abilityDamage, boolean valor,String key){
+      
       this.text = text;
       this.valor = valor;
       this.abilityDamage = abilityDamage;
+      this.keyword = key;
   
     }
     public String getText(){
@@ -16,7 +19,7 @@ public class Option{
     }
   
     public String getKeyWord(){
-      return keyword;
+      return this.keyword;
     }
   
     public int getAbilityDamage(){
