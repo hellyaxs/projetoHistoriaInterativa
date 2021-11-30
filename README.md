@@ -4,12 +4,13 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
 
 ## Integrantes do grupo
 
-> Alunos do Curso de Engenharia da Computação pela UFRPE:
+> Discentes do Curso de Engenharia da Computação pela UFRPE:
 
 <table>
         <tr>
             <th>nome</th>
             <th>Matricula</th>
+            <th>E-mail</th>
         </tr>
             <tr>
                 <td>ELias</td>
@@ -37,12 +38,10 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
             </tr>
 </table>
 
-    - `Orientador`: Lucas 
-    - `Universidade`: Universidade Federal Rural de Permanbuco (Uabj)
+     `Orientador` : Lucas 
+     `Universidade` : Universidade Federal Rural de Permanbuco (Uabj)
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
 ## Desenvolvimento o projeto
 
