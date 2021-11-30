@@ -38,8 +38,8 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
             </tr>
 </table>
 
-     `Orientador` : Lucas 
-     `Universidade` : Universidade Federal Rural de Permanbuco (Uabj)
+    * **Orientador** : Lucas 
+    * **Universidade** : Universidade Federal Rural de Permanbuco (Uabj)
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
