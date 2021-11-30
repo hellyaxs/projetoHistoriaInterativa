@@ -1,10 +1,10 @@
 # Projeto de programação 2
 
-O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em que o usuário pode tomar escolhas as quais resultarão em caminhos e finais diferentes para a história.
+O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em que o usuário pode tomar escolhas as quais resultarão em caminhos e finais diferentes para a história, criamos também um mini-mapa para que o jogador possa ver aonde ele se localiza na historia.
 
 ## Integrantes do grupo
 
-The workspace contains two folders by default, where:
+> Alunos do Curso de Engenharia da Computação pela UFRPE:
 
 <table>
         <tr>
@@ -15,9 +15,30 @@ The workspace contains two folders by default, where:
                 <td>ELias</td>
                 <td>20078124</td>
             </tr>
+             <tr>
+                <td>Alysson</td>
+                <td>20078124</td>
+            </tr>
+             <tr>
+                <td>Enock</td>
+                <td>200721803</td>
+            </tr>
+            <tr>
+                <td>Mateus</td>
+                <td>200723865</td>
+            </tr>
+             <tr>
+                <td>Valdir</td>
+                <td>200727561</td>
+            </tr>
+              <tr>
+                <td>Helson</td>
+                <td>200721817</td>
+            </tr>
 </table>
-- `AlunoFulano`: 
-- `lib`: the folder to maintain dependencies
+
+    - `Orientador`: Lucas 
+    - `Universidade`: Universidade Federal Rural de Permanbuco (Uabj)
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
