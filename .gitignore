@@ -1,7 +1,8 @@
-**/target/
-/target/
-*/target/*
+** / target /
+/ target /
+* / target / *
 .classpath
+<<<<<<< HEAD
 .project
 .settings
 .vscode/*
@@ -9,6 +10,15 @@
 *.jar
 *.war
 *.ear
+=======
+.projeto
+.definições
+** / .vscode /
+# Arquivos de pacote #
+* .jar
+* .war
+* .ear
+>>>>>>> fetureELias
 
-*.iml
-*.idea
+* .iml
+* .idea
