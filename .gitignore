@@ -1,16 +1,14 @@
-**/target/
-/target/
-*/target/*
+** / target /
+/ target /
+* / target / *
 .classpath
-.project
-.settings
+.projeto
+.definições
+** / .vscode /
+# Arquivos de pacote #
+* .jar
+* .war
+* .ear
 
-.vscode/*
-!.vscode/settings.json
-# Package Files #
-*.jar
-*.war
-*.ear
-
-*.iml
-*.idea
+* .iml
+* .idea

@@ -1,19 +1,20 @@
 import java.util.ArrayList;
 
 public class Player extends playerAbtract{
-
-
-    ArrayList<Chapters> chapters = new ArrayList<Chapters>();
-    ArrayList<Player> allies = new ArrayList<Player>();
-    ArrayList<Player> inimigos = new ArrayList<Player>();
-
-    public Player(int life, int energy) {
+    
+    public Player(int life, int energy,String name) {
         this.life = life;
         this.energy = energy;
+        this.name = name;
+        this.allies = new ArrayList<Player>();
+        this.inimigos = new ArrayList<Player>();
        
     }
     public int getLife(){
         return this.life;
+    }
+    public String getName(){
+        return this.name;
     }
 
     // metodo para adicionar aliados
@@ -43,15 +44,8 @@ public class Player extends playerAbtract{
         }
     }
 
-    public void startChapters() {
-       
-        dateChapters capitulos = new dateChapters();
-        chapters = capitulos.getdateChapters();
-
-        for(Chapters chapters : chapters){
-            chapters.escolher();
-        }
-       
-    }
-
 }
+ 
+
+
+

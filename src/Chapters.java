@@ -1,61 +1,81 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
-public class Chapters extends dateChapters {
+//aqui e classe responsavel por cada capitulo!!
+public class Chapters {
 
   private String text;
   private ArrayList<Option> options;
-  private Chapters choice;
   private Scanner scanner;
+  private Energy alteracaoEnegia;
 
   public Chapters(String text, ArrayList<Option> options) {
-    this.options = new ArrayList<Option>();
-    this.text = text;
-    scanner = new Scanner(System.in);
+      this.options = new ArrayList<Option>();
+      this.text = text;
+      scanner = new Scanner(System.in);
+      alteracaoEnegia = new Energy();
 
-    for (int i = 0; i < options.size(); i++) {
-      this.options.add(options.get(i));
-    }
-  }
+      for (Option preencher : options)
+      {
+        this.options.add(preencher);
+      }
+  } 
+   
+   /*public Chapters(String texto){
+   ArrayList<Option> optionsVazio = new ArrayList<Option>();
+    this.options = new ArrayList<Option>();
+      this.text = text;
+      scanner = new Scanner(System.in);
+      alteracaoEnegia = new Energy();
+
+      for (Option preencher : optionsVazio)
+      {
+        this.options.add(preencher);
+      }
+   }
+   */
 
   public void printAsk() {
     System.out.println(this.text);
 
   }
 
-  // metodo para as escolhas de rotas
-  public void escolher() {
+  // este metodo e responval pelas escolhas do jogador
+  public Energy escolher() {
 
     int life;
     int energy;
     String escolher;
     boolean loop = true;
-    // printa as opcoes na tela
+    
     System.out.println(this.text);
 
-    while (loop) {
+    while (loop)//enquato ele nao escrever a palavra correta loop
+    {
+       // printa as opcoes na tela
+          for (Option path : this.options)
+            {
+              System.out.println("["+path.getKeyWord()+"] "+path.getText());
+            }
+          
+            escolher = scanner.nextLine();
 
-      for (Option path : this.options) {
-        System.out.println("["+path.getKeyWord()+"] "+path.getText());
+          for (Option options : this.options)
+            {
+                if (escolher.equals(options.getKeyWord()))
+                { //verifica de o valor digitado e igual ao solicitado
+                  alteracaoEnegia.setLife(options.getAbilityDamage());
+                   alteracaoEnegia.setEnergy(options.getEnergyDamage());
+                  loop = false;
+                }
+            }
 
-      }
-      escolher = scanner.nextLine();
-
-      for (Option options : this.options) {
-
-        if (escolher.equals(options.getKeyWord())){ //verifica de o valor digitado e igual ao solicitado
-
-          life = options.getAbilityDamage();
-          energy = options.getEnergyDamage();
-          loop = false;
-        }
-      }
-
-      if (loop) {
-        System.out.println("escolha uma opção valida!!!");
-      }
-
+          if (loop)
+            {
+              System.out.println("escolha uma opção valida!!!");
+              this.printAsk();
+            }
     }
 
+    return alteracaoEnegia;
   }
 }

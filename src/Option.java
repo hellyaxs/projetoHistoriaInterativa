@@ -5,6 +5,10 @@ public class Option{
     private int abilityDamage;
     private int energyDamage;
     private boolean valor;
+
+    public Option(String text, int abilityDamage,String key){
+       this(text, abilityDamage, false, key); 
+    }
     
     public Option(String text, int abilityDamage, boolean valor,String key){
       
@@ -14,6 +18,7 @@ public class Option{
       this.keyword = key;
   
     }
+    
     public String getText(){
       return text;
     }
