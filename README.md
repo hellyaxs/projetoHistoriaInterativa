@@ -13,19 +13,24 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
             <th>E-mail</th>
         </tr>
             <tr>
-                <td>ELias</td>
-                <td>20078124</td>
-                <td>eliasvitor.dev@gmail.com</td>
-            </tr>
-             <tr>
                 <td>Alysson</td>
                 <td>20078124</td>
                 <td>alyssoncosta2001@hotmail.com</td>
             </tr>
-             <tr>
+            <tr>
                 <td>Enock</td>
                 <td>200721803</td>
                 <td>enockmleal@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Elias</td>
+                <td>20078124</td>
+                <td>eliasvitor.dev@gmail.com</td>
+            </tr> 
+            <tr>
+                <td>Helson</td>
+                <td>200721817</td>
+                <td>helson.santos25@gmail.com</td>
             </tr>
             <tr>
                 <td>Mateus</td>
@@ -37,11 +42,7 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
                 <td>200727561</td>
                 <td>v.zacarias@hotmail.com.br</td>
             </tr>
-              <tr>
-                <td>Helson</td>
-                <td>200721817</td>
-                <td>helson.santos25@gmail.com</td>
-            </tr>
+              
 </table>
 
      Orientador : Lucas 
