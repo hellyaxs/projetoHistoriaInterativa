@@ -36,8 +36,11 @@ abstract class playerAbtract {
   public void setLinha(int linha){
     this.linha = linha;
   }
-  
    public void setColuna(int coluna){
+    this.coluna = coluna;
+  }
+  public void setPosition(int linha,int coluna){
+    this.linha = linha;
     this.coluna = coluna;
   }
   public ArrayList<Player> getInimigos(){

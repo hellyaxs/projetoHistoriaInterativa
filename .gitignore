@@ -1,12 +1,12 @@
 ######################################
 ## Java
 ######################################
-.mtj.tmp /
+.mtj.tmp/
 *.classe
-* .jar
+*.jar
 *.guerra
 *.orelha
-* .nar
+*.nar
 hs_err_pid *
 
 ######################################
@@ -27,7 +27,7 @@ buildNumber.properties
 ######################################
 ## Gradle
 ######################################
-bin /
+bin/
 construir/
 .gradle
 .gradletasknamecache
@@ -48,8 +48,8 @@ Fora/
 ## Eclipse
 ######################################
 .definições/
-bin /
-tmp /
+bin/
+tmp/
 .metadata
 .classpath
 .projeto
@@ -65,5 +65,5 @@ local.properties
 ######################################
 ## Visual Studio Code
 ######################################
-.vscode /
+.vscode/
 .code-workspace

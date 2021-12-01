@@ -12,7 +12,7 @@ abstract class dateChapters extends Texts{
         this.chapters = new ArrayList<Chapters>();
         //capitulo 2
         ArrayList<Option> escolhas = new ArrayList<Option>();
-        escolhas.add(new Option("bom dia, qual das escolhas voce deseja realizar. [1]-sim, [2]-nao", 12, true, "oi"));
+        escolhas.add(new Option("bom dia, qual das escolhas voce deseja realizar?", 12, true, "oi"));
         escolhas.add(new Option("escolha 2", -12, true, "fala"));
         
         chapters.add(new Chapters(this.textos.get(0), escolhas));

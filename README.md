@@ -35,7 +35,7 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
             <tr>
                 <td>Mateus</td>
                 <td>200723865</td>
-                <td></td>
+                <td>mateusprincek@gmail.com</td>
             </tr>
              <tr>
                 <td>Valdir</td>
