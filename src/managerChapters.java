@@ -8,25 +8,35 @@ public class managerChapters extends dateChapters {// esta class deve receber to
   private Random random;
   private String[][] matriz;
   private ArrayList<Player> inimigos;
+  private ArrayList<Player> luck;
+  private Position p;
 
   managerChapters(Player jogador) {
 
     this.chapters = getdateChapters();
     this.jogador = jogador;
     this.random = new Random();
-    this.matriz = new String[10][10];
+    this.matriz = new String[11][11];
     this.inimigos = jogador.getInimigos();
+    this.p = new Position(0, 0);
+
+    zeraMatriz();
+
+    for (var list : inimigos) {
+      p.setPosition(random.nextInt(11),random.nextInt(11));
+      list.setPosition(p);
+    }
+
+  }
+
+  public void zeraMatriz() {
 
     for (int i = 0; i < this.matriz.length; i++) {
       for (int j = 0; j < this.matriz.length; j++) {
         matriz[i][j] = " _ ";
       }
     }
-
-    for (Player inimigos : this.inimigos) {
-      this.matriz[random.nextInt(9)][random.nextInt(9)] = " " + inimigos.getName().substring(0, 1).toUpperCase() + " ";
-    }
-
+    this.matriz[5][5] = " " + jogador.getName().substring(0, 1).toUpperCase() + " ";
   }
 
   public void randomChapters() {// este metodo deve navegar pelos capitulos dependendo da vida do jogador
@@ -34,73 +44,57 @@ public class managerChapters extends dateChapters {// esta class deve receber to
     for (int i = 0; i < this.chapters.size(); i++) {
 
       jogador.setEnergy(chapters.get(i).escolher());
-      jogador.energy = jogador.getEnergy();
-      System.out.println("depois desta escolha voce recebeu mais " + jogador.life + " de energia");
-      System.out.println(jogador.getLife());
 
-      if (this.jogador.getLife() <= 25) {// dependendo da vida,o jogador irá para capitulos diferentes
-        // this.chapters.get(random.nextInt(5)).escolher();
-        System.out.println("aqui o jogador tem 25 pontos de vida");
-        this.printMap(jogador.getLinha() + 1, jogador.getColuna() + 1);
-        jogador.setPosition(jogador.getLinha() + 1,jogador.getColuna() + 1);
-
-      } else if (this.jogador.getLife() <= 50 && this.jogador.getLife() >= 25) {
-        // this.chapters.get(random.nextInt(5)+10).escolher();
-        System.out.println("aqui o jogador tem 50 pontos de vida");
-        this.printMap(jogador.getLinha() + 1, jogador.getColuna() + 1);
-        jogador.setPosition(jogador.getLinha() + 1,jogador.getColuna() + 1);
-
-      } else if (this.jogador.getLife() <= 75 && this.jogador.getLife() >= 50) {
-        // this.chapters.get(random.nextInt(5)+10).escolher();
-        System.out.println("aqui o jogador tem 75 pontos de vida");
-        this.printMap(jogador.getLinha() + 1, jogador.getColuna() + 1);
-        jogador.setPosition(jogador.getLinha() + 1,jogador.getColuna() + 1);
-
-      } else if (this.jogador.getLife() <= 100 && this.jogador.getLife() >= 75) {
-        // this.chapters.get(random.nextInt(5)+10).escolher();
-        System.out.println("aqui o jogador tem 100 pontos de vida");
-        this.printMap(jogador.getLinha(), jogador.getColuna() + 1);
-        jogador.setPosition(jogador.getLinha() + 1,jogador.getColuna() + 1);
-
-      } else if (this.jogador.getLife() == 0) {
+      if (this.jogador.getLife() <= 0) {
         System.out.println("--------GAME OVER--------");
+        break;
+      } else {
+        this.printMap();
       }
     }
   }
 
-  /*
-   * public void interagir(Player jogador){ if(matriz[i][j]) if
-   * (addAllies.contais(jogador)){ jogador.life = jogador.life + (5);
-   * System.out.println("depois da interação, seu HP é de: ");
-   * System.out.println(jogador.life);
-   * 
-   * } else if (addEnemy.contains(Player jogador)){ jogador.life = jogador.life -
-   * (10); System.out.println("depois da interação, seu HP é de: ");
-   * System.out.println(jogador.life) } else{
-   * System.out.println("seu HP nao mudou");
-   * 
-   * } }
-   */
-  public void printMap(int linha, int coluna) {
-    /*
-     * Cada jogador, inclusive o principal, terá uma posição 2D representada em um
-     * minimapa. A cada novo capítulo o minimapa deve ser mostrado novamente,
-     * posicionando todos os personagens mostrando somente a primeira letra de cada.
-     * O mapa deverá ser sempre centralizado no jogador principal. Interações entre
-     * personagens só serão permitidas caso estejam em posições adjacentes.
-     */
+  public void printMap() {
 
-    this.matriz[linha][coluna] = " " + jogador.getName().substring(0, 1).toUpperCase() + " ";
+    Position c = new Position(0, 0);
+    for (int i = 0; i < inimigos.size(); i++) 
+    {
+      c.setPositionAbsolute(move(i));
+      if(c.PositionY()<10 && c.PositionY()>=0||c.PositionX()<10 && c.PositionX()>=0)
+      {
+        if(c.PositionY()!=5 && c.PositionX()!=5)
+        {
+          this.matriz[c.PositionY()][c.PositionX()] = " " + inimigos.get(i).getName().substring(0, 1).toUpperCase() + " ";
+        }
+      }
+      
+    }
 
+    System.out.println("");
     for (int i = 0; i < this.matriz.length; i++) {
       for (int j = 0; j < this.matriz.length; j++) {
         System.out.print(matriz[i][j]);
       }
       System.out.println("");
     }
-
-    this.matriz[linha][coluna] = " _ ";
-  
-
+    printStatus();
+    zeraMatriz();
   }
+
+  public Position move(int i) {
+    return inimigos.get(i).movePosition(jogador.getPosition());
+  }
+
+  public void printStatus() {
+
+    System.out.println("\n-----------------------------------");
+    System.out.println("YOU: A   \tXP: " + jogador.life + " pontos \tEnergy: " + jogador.energy + " pontos\n");
+
+    for (Player list : inimigos) {
+      System.out
+          .println("ENEMIES: " + list.getName().substring(0, 1).toUpperCase() + "\t\tXP: " + list.life + " pontos");
+    }
+    System.out.println("-----------------------------------\n");
+  }
+
 }

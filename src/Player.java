@@ -2,50 +2,49 @@ import java.util.ArrayList;
 
 public class Player extends playerAbtract{
     
-    public Player(int life, int energy,String name) {
+    public Player(int life, int energy,String name,int linha,int coluna) 
+    {
         this.life = life;
         this.energy = energy;
         this.name = name;
         this.allies = new ArrayList<Player>();
         this.inimigos = new ArrayList<Player>();
-       
-    }
-    public int getLife(){
-        return this.life;
-    }
-    public String getName(){
-        return this.name;
+        this.positionplay = new Position(linha,coluna);
     }
 
     // metodo para adicionar aliados
-    public void addAllies(Player personagem) {
-        if (allies.contains(personagem) == false && inimigos.contains(personagem) == false) {
-            this.allies.add(personagem);
-            personagem.allies.add(this);
-        }
-        if (allies.contains(personagem) == true) {
-            System.out.println("Eles já são da mesma equipe");
-        }
-        if (inimigos.contains(personagem) == true) {
-            System.out.println("Eles já se odeiam");
-        }
+    public void addAllies(Player personagem)
+    {
+        this.allies.add(personagem);
+        personagem.allies.add(this);     
     }
 
     // metodo para adicionar inimigos
-    public void addEnemy(Player personagem) {
-        if (inimigos.contains(personagem) == false && allies.contains(personagem) == false) {
-            this.inimigos.add(personagem);
+    public void addEnemy(Player personagem) 
+    {  
+        this.inimigos.add(personagem);     
+    }
+  
+    public Position movePosition(Position p)
+    {
+        if(p.x<5 && p.y<5){
+            return positionplay.somar(p);
+        }else{
+            return positionplay.substrair(p);
         }
-        if (allies.contains(personagem) == true) {
-            System.out.println("Eles já são da mesma equipe");
-        }
-        if (inimigos.contains(personagem) == true) {
-            System.out.println("Eles já se odeiam");
-        }
+        
     }
 
+    public int getPositionX()
+    {
+        return positionplay.x;
+    }
+    
+    public int getPositionY()
+    {
+        return positionplay.y;
+    }
+
+  
+
 }
- 
-
-
-
