@@ -6,8 +6,6 @@ public class Option{
     private int abilityDamage; //dano/ganho na vida do player 
     private int energyDamage;  //dano/ganho na energia do player
     
-   
-
   
     public Option(String text, int abilityDamage,String key){
       this.text = text;

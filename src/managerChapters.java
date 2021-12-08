@@ -81,20 +81,21 @@ public class managerChapters extends dateChapters {// esta class deve receber to
     zeraMatriz();
   }
 
-  public Position move(int i) {
+  public Position move(int i)
+  {
     return inimigos.get(i).movePosition(jogador.getPosition());
   }
 
-  public void printStatus() {
+  public void printStatus() 
+  {
+      System.out.println("\n-----------------------------------");
+      System.out.println("YOU: A   \tXP: " + jogador.life + " pontos \tEnergy: " + jogador.energy + " pontos\n");
 
-    System.out.println("\n-----------------------------------");
-    System.out.println("YOU: A   \tXP: " + jogador.life + " pontos \tEnergy: " + jogador.energy + " pontos\n");
-
-    for (Player list : inimigos) {
-      System.out
-          .println("ENEMIES: " + list.getName().substring(0, 1).toUpperCase() + "\t\tXP: " + list.life + " pontos");
-    }
-    System.out.println("-----------------------------------\n");
+      for (Player list : inimigos)
+      {
+        System.out.println("ENEMIES: " + list.getName().substring(0, 1).toUpperCase() + "\t\tXP: " + list.life + " pontos");
+      }
+      System.out.println("-----------------------------------\n");
   }
 
 }
