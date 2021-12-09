@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 abstract class playerAbtract {
 
     protected String name;
