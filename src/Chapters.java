@@ -55,7 +55,7 @@ public class Chapters {
                   changeEnergy.setLife(options.getAbilityDamage());
                   changeEnergy.setEnergy(options.getEnergyDamage());
                   changeEnergy.setPosition(random.nextInt(2),random.nextInt(2));
-                  
+                  System.out.println(options.getTextReferencia());
                   
                   loop = false;
                 }

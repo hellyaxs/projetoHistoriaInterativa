@@ -1,15 +1,19 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Player extends playerAbtract{
     
-    public Player(int life, int energy,String name,int linha,int coluna) 
+    private Random random;
+
+    public Player(int life, int energy,String name) 
     {
         this.life = life;
         this.energy = energy;
         this.name = name;
         this.allies = new ArrayList<Player>();
         this.inimigos = new ArrayList<Player>();
-        this.positionplay = new Position(linha,coluna);
+        this.positionplay = new Position();
+        this.random = new Random();
     }
 
     // metodo para adicionar aliados
@@ -45,6 +49,42 @@ public class Player extends playerAbtract{
         return positionplay.y;
     }
 
+    public void lucky(int i)
+    {
+        int luck = random.nextInt(5);
+          switch(luck){
+            case 0:
+            this.energy -= 10;
+            inimigos.get(i).setEnergyjust(10);
+            break;
+      
+            case 1:
+            this.energy  -= 11;
+            inimigos.get(i).setEnergyjust(10);
+            break;
+      
+            case 2:
+            this.energy -= 12;
+            inimigos.get(i).setEnergyjust(10);
+            break;
+      
+            case 3:
+            this.energy += 13;
+            inimigos.get(i).setEnergyjust(-10);
+            break;
+      
+            case 4:
+            this.energy += 14;
+            inimigos.get(i).setEnergyjust(-10);
+            break;
+            
+            case 5:
+            this.energy += 15;
+            inimigos.get(i).setEnergyjust(-10);
+            break;
+            
+          }
+        }
   
 
 }
