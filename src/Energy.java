@@ -21,7 +21,8 @@ public class Energy {
   }
   
   public void setPosition(int x,int y){
-    this.position = new Position(x,y);
+    this.position = new Position();
+    this.position.setPosition(x, y);
   }
 
   public int getPositionX()

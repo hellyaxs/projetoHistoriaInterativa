@@ -33,14 +33,14 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
                 <td>helson.santos25@gmail.com</td>
             </tr>
             <tr>
-                <td>Mateus</td>
+                <td>MateusChagas</td>
                 <td>200723865</td>
                 <td>mateusprincek@gmail.com</td>
             </tr>
              <tr>
                 <td>Valdir</td>
                 <td>200727561</td>
-                <td>v.zacarias@hotmail.com.br</td>
+                <td>v.zacariasoliveira@gmail.com</td>
             </tr>
               
 </table>
