@@ -13,7 +13,7 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
             <th>E-mail</th>
         </tr>
             <tr>
-                <td>Alysson</td>
+                <td>Alysson Costa Pereira</td>
                 <td>20078124</td>
                 <td>alyssoncosta2001@hotmail.com</td>
             </tr>
