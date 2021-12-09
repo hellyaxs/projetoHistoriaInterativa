@@ -1,4 +1,4 @@
-# Projeto de programação 2
+﻿# Projeto de programação 2
 
 O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em que o usuário pode tomar escolhas as quais resultarão em caminhos e finais diferentes para a história, criamos também um mini-mapa para que o jogador possa ver aonde ele se localiza na historia.
 
@@ -18,7 +18,7 @@ O objetivo do projeto é criar uma aventura textual, uma narrativa interativa em
                 <td>alyssoncosta2001@hotmail.com</td>
             </tr>
             <tr>
-                <td>Enock</td>
+                <td>Enock de Matos Leal Neto</td>
                 <td>200721803</td>
                 <td>enockmleal@gmail.com</td>
             </tr>
